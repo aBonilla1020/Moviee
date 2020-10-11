@@ -1,0 +1,16 @@
+<div class="row">
+
+    <div class="col-md-3 mb-5" *ngFor="let moviee of movies">
+        <div (click)="onClickMovie(moviee.id)" class="pointer">
+            <img src="https://image.tmdb.org/t/p/w500{{moviee.poster_path}}" alt="img" class="img-fluid" *ngIf="moviee.poster_path">
+            <img src="../../../assets/no-image.jpg" alt="img" class="img-fluid" *ngIf="!moviee.poster_path">
+            <h6 class="mt-1">{{moviee.title}}</h6>
+            <div class="starsPuntiation">
+                <star-rating [value]="moviee.vote_average" totalstars="10" checkedcolor="red" uncheckedcolor="black" size="14px" readonly="false" (rate)="onRate($event)"></star-rating>
+                <p>{{moviee.vote_average}}</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>

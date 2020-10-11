@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" routerLink='/home'><img src="../../../assets/DinoChatWorkPhoto.png" alt="logo" width="180"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <input #searchInput class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="searchFilm(searchInput.value)">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="button" (click)="searchFilm(searchInput.value)">Search</button>
+            </div>
+        </div>
+    </div>
+</nav>

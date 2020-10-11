@@ -1,0 +1,23 @@
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" *ngFor="let moviee of movie" [ngStyle]="{'background-size':'cover','background-image': 'url(https://image.tmdb.org/t/p/w500'+ moviee.backdrop_path +')'}">
+
+            <div class="content-swiper">
+                <h3>{{moviee.title}}</h3>
+                <p>{{moviee.overview | slice:0:150}}</p>
+            </div>
+        </div>
+
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div (click)="previus()" class="swiper-button-prev"></div>
+    <div (click)="next()" class="swiper-button-next"></div>
+
+
+</div>

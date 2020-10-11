@@ -1,0 +1,24 @@
+<div class="movieDetailsPage" *ngIf="movieDetails">
+
+    <div>
+
+        <img src="https://image.tmdb.org/t/p/w300{{movieDetails.poster_path}}" alt="imagen">
+
+    </div>
+    <div class="ml-4">
+
+        <h3>{{movieDetails.title}}</h3>
+        <div class="starss">
+            <star-rating [value]="movieDetails.vote_average" totalstars="10" checkedcolor="red" uncheckedcolor="black" size="14px" readonly="false" (rate)="onRate($event)"></star-rating>
+            <p class="ml-2">{{movieDetails.vote_average}}</p>
+        </div>
+        <p>{{movieDetails.overview}}</p>
+        <button class="btn btn-info" type="button" (click)="goBack()">go back</button>
+    </div>
+
+</div>
+<div *ngIf="credits.length > 0" class="row">
+    <div class="col">
+        <app-credits-slide-show [actors]="credits"></app-credits-slide-show>
+    </div>
+</div>
